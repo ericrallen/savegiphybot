@@ -8,6 +8,14 @@ var bot = controller.spawn({
   token: token
 });
 
+bot.api.team.info({}, function(err, res) {
+  controller.storage.teams.save({id: res.team.id}, function(err) {
+      if (err) {
+          console.error(err);
+      }
+  });
+});
+
 bot.startRTM(function(err,bot,payload) {
   if (err) {
     throw new Error('Could not connect to Slack');
