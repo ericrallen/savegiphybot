@@ -12,10 +12,10 @@ bot.startRTM(function(err,bot,payload) {
   if (err) {
     throw new Error('Could not connect to Slack');
   }
-});
 
-controller.setupWebserver(3000, function() {
-  console.log('Listening on port 3000');
+  controller.setupWebserver(3000, function() {
+    console.log('Listening on port 3000');
+  });
 });
 
 controller.hears(["/gif","*"],["direct_message","direct_mention","mention","ambient"],function(bot,message) {
