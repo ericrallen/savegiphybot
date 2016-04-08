@@ -27,7 +27,7 @@ bot.startRTM(function(err,bot,payload) {
   });
 });
 
-controller.hears(["/gif","*"],["direct_message","direct_mention","mention","ambient"],function(bot,message) {
+controller.hears(["/gif"],["direct_message","direct_mention","mention","ambient"],function(bot,message) {
   console.log('#savegiphy');
   // do something to respond to message
   // all of the fields available in a normal Slack message object are available
