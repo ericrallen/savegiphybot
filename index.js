@@ -19,5 +19,5 @@ controller.hears(["/gif","*"],["direct_message","direct_mention","mention","ambi
   // all of the fields available in a normal Slack message object are available
   // https://api.slack.com/events/message
   bot.reply(message,'#savegiphy!');
-  bot.reply(message, '/giphy ' + message);
+  bot.reply(message, '/giphy ' + message.text);
 });
