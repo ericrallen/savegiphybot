@@ -14,6 +14,10 @@ bot.startRTM(function(err,bot,payload) {
   }
 });
 
+controller.setupWebserver(3000, function() {
+  console.log('Listening on port 3000');
+});
+
 controller.hears(["/gif","*"],["direct_message","direct_mention","mention","ambient"],function(bot,message) {
   // do something to respond to message
   // all of the fields available in a normal Slack message object are available
