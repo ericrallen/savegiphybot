@@ -30,6 +30,6 @@ controller.hears(["/gif","*"],["direct_message","direct_mention","mention","ambi
   // do something to respond to message
   // all of the fields available in a normal Slack message object are available
   // https://api.slack.com/events/message
-  bot.reply(message,'#savegiphy!');
-  bot.reply(message, '/giphy ' + message.text.replace(/\/gif/igm, ''));
+  bot.replyPublic(message,'#savegiphy!');
+  bot.replyPrivate(message, 'You should use:  `/giphy ' + message.text.replace(/\/gif\s/igm, '') + '` instead.');
 });
